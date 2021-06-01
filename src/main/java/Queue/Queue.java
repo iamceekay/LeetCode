@@ -1,6 +1,7 @@
 package Queue;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Queue {
     private static int[] selfQueue;
@@ -51,6 +52,8 @@ public class Queue {
         Queue queue=new Queue(5);
         queue.enque(2);
         queue.enque(3);
+        queue.print();
+        System.out.println("--------------------");
         queue.enque(4);
         queue.enque(5);
         queue.enque(6);

@@ -58,4 +58,28 @@ Explanation:
            result.add (pq.poll().getKey());
         return result;
     }
+    public List<String> topKFrequent(String[] words, int k) {
+        HashMap<String,Integer> hm=  new HashMap<>();
+        ArrayList<String>  res= new ArrayList<>();
+        for(String word:words)
+            hm.put(word,hm.getOrDefault(word,0)+1);
+        PriorityQueue<Map.Entry<String,Integer>> pq=  new PriorityQueue<>((a,b)->a.getValue()==b.getValue()?b.getKey().compareTo(a.getKey()):b.getValue()-a.getValue());
+        pq.addAll(hm.entrySet());
+
+        while(res.size()<k)
+            res.add(pq.poll().getKey());
+        return res;
+    }
+    public int[] topKFrequent(int[] nums, int k) {
+        HashMap<Integer,Integer> hm= new HashMap<>();
+        int[] res=new int[k];
+        int i=0;
+        for(int num:nums)
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        PriorityQueue<Map.Entry<Integer,Integer>> pq= new PriorityQueue<>((a,b)->b.getValue()-a.getValue());
+        pq.addAll(hm.entrySet());
+        while(i<k)
+            res[i++]=pq.poll().getKey();
+        return res;
+    }
 }

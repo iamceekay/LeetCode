@@ -2,13 +2,14 @@ package Exam;
 
 import java.util.*;
 
+
 class Main {
     public static void main(String[] args) throws java.lang.Exception {
-        /*Scanner sc = new Scanner(System.in);
+       /* *//*Scanner sc = new Scanner(System.in);
         while (true) {
             int a = sc.nextInt();
             if(a==42) break;
-            System.out.println(a);*/
+            System.out.println(a);*//*
         // int[] a=new int[]{ 8, 16, 80, 55, 32, 8, 38, 40, 65, 18, 15, 45, 50, 38, 54, 52, 23, 74, 81, 42, 28, 16, 66, 35, 91, 36, 44, 9, 85, 58, 59, 49, 75, 20, 87, 60, 17, 11, 39, 62, 20, 17, 46, 26, 81, 92};
         //kthsmallest(a,9);
         solve(new ArrayList<>(Arrays.asList(-1, -2, -3, 4, 5 )));
@@ -31,7 +32,17 @@ class Main {
         {
             System.out.println(pQueue.poll());
         }
-        System.out.println("Queue End---------");
+        System.out.println("Queue End---------");*/
+
+        for(int i = 1; i < 15; i *= 2)
+        {
+            System.out.println(i);
+        }
+        for(int i = 15; i > -1; i /= 2)
+        {
+            System.out.println("----"+i);
+        }
+      // minimizeString("abaacbac");
     }
 
     public int singleNumber(int[] nums) {
@@ -98,6 +109,49 @@ class Main {
         System.out.println(result);
         return result;
     }
+    //-abaacbac
+    //bCount=2
+    //a
+    //aa
+    //aaa
+    //aaabbc
+    //aaabbca
+    //aaabbcac
 
+    //----
+    // a b a b b a a b
+    // bcount=4
+    //a
+    //aa
+    //aaa
+    //aaaa
+    //aaaabbbb
+    static String minimizeString(String s) {
+        char[] str=s.toCharArray();
+        StringBuilder sb=new StringBuilder();
+        int n=s.length();
+            int bCount = 0;
+            for (int i = 0; i < n; i++)
+                if (str[i] == 'b')
+                    bCount++;
+            boolean bval = false;
+            for (int i = 0; i < n; i++)
+            {
+                if (str[i] == 'c' && !bval)
+                {
+                    bval = true;
+                    for (int j = 0; j < bCount; j++)
+                        sb.append("b");
+                }
+                if (str[i] != 'b')
+                    sb.append(str[i]);
 
-}
+            }
+            if (!bval)
+                for (int j = 0; j < bCount; j++)
+                    sb.append("b");
+        return sb.toString();
+        }
+
+    }
+

@@ -1,5 +1,7 @@
 package LeetCodePattern;
 
+import java.util.PriorityQueue;
+
 public class LinkedListReversal {
     public class ListNode {
       int val;
@@ -7,6 +9,11 @@ public class LinkedListReversal {
       ListNode(int x) { val = x; }
   }
     public static void main(String[] args) {
+        PriorityQueue<String>   pq=new PriorityQueue<>((a,b)->a.compareTo(b));
+        pq.add("Abc");
+        pq.add("zzz");
+        pq.add("def");
+        System.out.println(pq);
 
     }
 

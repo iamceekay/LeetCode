@@ -39,6 +39,18 @@ public class Time {
        }*/
         System.out.println(nextClosestTime3("12:36:09"));
     }
+    static long largestValue(int[] A) {
+            int sum=0;
+            for(int i=0;i<A.length;i++)
+            {
+                for(int j=i+1;j<A.length;j++)
+                {
+                    sum+=A[i]+A[j];
+                }
+            }
+            // Return the largest value of any of A's nonempty subarrays.
+            return sum;
+    }
 
         public static String nextClosestTime (String time){
             HashMap<Integer, Integer> hs = new HashMap<>();

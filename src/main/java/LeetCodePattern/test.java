@@ -2,27 +2,31 @@ package LeetCodePattern;
 
 import java.util.*;
 
+import static java.lang.Math.abs;
+import static java.lang.Math.round;
+
 public class test {
 
-
+    static int a,b=2,c;
 
     public static void main(String[] args)
     {
-        /*ArrayList<String> h = new ArrayList<>();
-        System.out.println(h.size());
-        h.add("h");
-        h.add("a");
-        h.add("c");
-        h.add(1,"k");
-        System.out.println(h.size());
-        h.remove("a");
-        h.remove(2);
-        System.out.println(h.size());
-        strStr(" "," ");*/
-        String s="abA12";
-        s.trim();
-        String[] splitted=s.split(" ");
-        System.out.println( s != null && s.matches("[a-zA-Z]*$"));
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(round(22.9));
+
+        List<Integer> list=new ArrayList<>(Arrays.asList(2,3,4,5,6,8,9));
+        Iterator<Integer> iterator = list.iterator();
+        while (iterator.hasNext())
+        {
+            Integer ele=iterator.next();
+            if(ele%2==0)
+                iterator.remove();
+        }
+        System.out.println(list);
+
     }
 
     private static int sumMaxOccurring(int[][] mat) {
