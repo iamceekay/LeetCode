@@ -1,6 +1,6 @@
 package Exam.Concurrency;
 
-public class Singleton {
+ class Singleton {
     private static Singleton instance;
 
     private Singleton() {
@@ -14,5 +14,6 @@ public class Singleton {
         }
         return instance;
     }
+
 
 }
