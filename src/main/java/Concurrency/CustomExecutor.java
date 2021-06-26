@@ -71,6 +71,7 @@ public class CustomExecutor {
         MyExecutorService service = MyExecutors.myNewFixedThreadPool(3);
         for (int i = 0; i < 20; i++) {
             service.submit(()-> System.out.println("Hello "+Thread.currentThread().getName()));
+            service.submit(new Mytask());
         }
     }
 }
